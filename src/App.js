@@ -6,6 +6,7 @@ import useStyles from './styles.js';
 import wordsToNumbers from 'words-to-numbers';
 
 const alanKey = '242f0171c5303c22e6ae8cd510ade2bc2e956eca572e1d8b807a3e2338fdd0dc/stage';
+const imageSrc = 'https://home.sophos.com/en-us/medialibrary/Microsites/Home/SecurityCenter/ai-article-pic10.jpg';
 const App = () => {
 
     const classes = useStyles();
@@ -42,11 +43,12 @@ const App = () => {
             } 
 
         });
-    }, []);
+    }, [currentArticle]);
     return(
         <div>
             <div className={classes.logoContainer}>
-                <img src='https://alan.app/voice/images/previews/preview.jpg' className={classes.alanLogo} alt="Alan Logo"/>
+            <div className="sorokeText"> Soroke: <br></br>Read The News</div>
+                <img src={imageSrc} className={classes.alanLogo} alt="Alan Logo"/>
             </div>
             <NewsCards articles={newsArticles} currentArticle={currentArticle}/>
         </div>
